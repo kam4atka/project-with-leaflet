@@ -44,10 +44,29 @@
     marker.addTo(map);
   };
 
+  const addPins = (points) => {
+    points.forEach((point) => {
+      const customIcon = L.icon({
+        iconUrl: `./img/marker/pin.svg`,
+        iconSize: [27, 39]
+      });
+
+      const marker = L.marker({
+        lat: point.location.lat,
+        lng: point.location.lng
+      }, {
+        icon: customIcon
+      });
+
+      marker.addTo(map);
+    });
+  };
+
   window.map = {
     mainPinButton,
     initiate,
     removeOverlay,
-    addPin
+    addPin,
+    addPins
   };
 })();
