@@ -46,6 +46,8 @@
 
   const addPins = (points) => {
     points.forEach((point) => {
+      const popupElement = window.popup.getTemplate(point);
+
       const customIcon = L.icon({
         iconUrl: `./img/marker/pin.svg`,
         iconSize: [27, 39]
@@ -58,7 +60,8 @@
         icon: customIcon
       });
 
-      marker.addTo(map);
+      marker.addTo(map)
+        .bindPopup(popupElement);
     });
   };
 
