@@ -2,12 +2,15 @@
 
 (() => {
   const parentBlock = document.querySelector(`.map`);
+  const mainPinButton = parentBlock.querySelector(`.map__pin--main`);
+
+  const overlayClass = `map--faded`;
 
   let map;
 
-  const initiate = () => {
+  const initiate = (coords) => {
     map = L.map(parentBlock, {
-      center: window.const.CENTER_MAP_COORDS,
+      center: coords,
       zoom: 13,
       zoomControl: false,
       scrollWheelZoom: false,
@@ -21,7 +24,13 @@
     ).addTo(map);
   };
 
+  const removeOverlay = () => {
+    parentBlock.classList.remove(overlayClass);
+  };
+
   window.map = {
-    initiate
+    mainPinButton,
+    initiate,
+    removeOverlay
   };
 })();
