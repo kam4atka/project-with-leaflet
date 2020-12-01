@@ -7,6 +7,7 @@
       window.map.removeOverlay();
 
       window.map.initiate(window.const.CENTER_MAP_COORDS);
+      window.map.addPin(window.const.CENTER_MAP_COORDS);
     }
   };
 

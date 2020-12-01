@@ -28,9 +28,26 @@
     parentBlock.classList.remove(overlayClass);
   };
 
+  const addPin = (coords) => {
+    const mainIcon = L.icon({
+      iconUrl: `./img/marker/pin-active.svg`,
+      iconSize: [40.5, 58.5]
+    });
+
+    const marker = L.marker({
+      lat: coords.lat,
+      lng: coords.lng
+    }, {
+      icon: mainIcon
+    });
+
+    marker.addTo(map);
+  };
+
   window.map = {
     mainPinButton,
     initiate,
-    removeOverlay
+    removeOverlay,
+    addPin
   };
 })();
