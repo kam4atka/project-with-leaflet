@@ -28,3 +28,19 @@ export const initiate = (coords) => {
 export const removeOverlay = () => {
   parentBlock.classList.remove(overlayClass);
 };
+
+export const addPin = (coords) => {
+  const mainIcon = leaflet.icon({
+    iconUrl: `./img/marker/pin-active.svg`,
+    iconSize: [40.5, 58.5]
+  });
+
+  const marker = leaflet.marker({
+    lat: coords.lat,
+    lng: coords.lng
+  }, {
+    icon: mainIcon
+  });
+
+  marker.addTo(map);
+};

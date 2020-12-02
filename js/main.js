@@ -1,4 +1,4 @@
-import {mainPinButton, initiate, removeOverlay} from "./map.js";
+import {mainPinButton, initiate, removeOverlay, addPin} from "./map.js";
 import {KeyCode} from "./util.js";
 import {CENTER_MAP_COORDS} from "./const.js";
 
@@ -8,6 +8,7 @@ const mainPinButtonHandler = (evt) => {
     removeOverlay();
 
     initiate(CENTER_MAP_COORDS);
+    addPin(CENTER_MAP_COORDS);
   }
 };
 
