@@ -44,3 +44,21 @@ export const addPin = (coords) => {
 
   marker.addTo(map);
 };
+
+export const addPins = (points) => {
+  points.forEach((point) => {
+    const customIcon = leaflet.icon({
+      iconUrl: `./img/marker/pin.svg`,
+      iconSize: [27, 39]
+    });
+
+    leaflet.marker({
+      lat: point.location.lat,
+      lng: point.location.lng
+    },
+    {
+      icon: customIcon
+    })
+    .addTo(map);
+  });
+};
