@@ -3,6 +3,9 @@ import leaflet from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const parentBlock = document.querySelector(`.map`);
+export const mainPinButton = parentBlock.querySelector(`.map__pin--main`);
+
+const overlayClass = `map--faded`;
 
 let map;
 
@@ -20,4 +23,8 @@ export const initiate = (coords) => {
       `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`,
       {attribution: `&copy; <a href="<https://www.openstreetmap.org/copyright>">OpenStreetMap</a> contributors`}
   ).addTo(map);
+};
+
+export const removeOverlay = () => {
+  parentBlock.classList.remove(overlayClass);
 };
