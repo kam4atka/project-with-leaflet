@@ -22,6 +22,8 @@
         `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`,
         {attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`}
     ).addTo(map);
+
+    window.form.setAddress(coords);
   };
 
   const removeOverlay = () => {
@@ -38,10 +40,18 @@
       lat: coords.lat,
       lng: coords.lng
     }, {
-      icon: mainIcon
+      icon: mainIcon,
+      draggable: true
     });
 
     marker.addTo(map);
+
+    const mouseMoveEndHandler = (evt) => {
+      const position = evt.target.getLatLng();
+      window.form.setAddress(position);
+    };
+
+    marker.on(`moveend`, mouseMoveEndHandler);
   };
 
   const addPins = (points) => {
