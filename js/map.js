@@ -1,4 +1,5 @@
 import leaflet from "leaflet";
+import {getTemplate} from "./popup.js";
 
 import "leaflet/dist/leaflet.css";
 
@@ -47,6 +48,8 @@ export const addPin = (coords) => {
 
 export const addPins = (points) => {
   points.forEach((point) => {
+    const popupElement = getTemplate(point);
+
     const customIcon = leaflet.icon({
       iconUrl: `./img/marker/pin.svg`,
       iconSize: [27, 39]
@@ -59,6 +62,7 @@ export const addPins = (points) => {
     {
       icon: customIcon
     })
-    .addTo(map);
+    .addTo(map)
+    .bindPopup(popupElement);
   });
 };
