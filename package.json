@@ -18,7 +18,9 @@
     "webpack-dev-server": "3.11.0"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "leaflet": "1.7.1"
+  },
   "scripts": {
     "eslint": "eslint js/**/*.js",
     "test": "npm run eslint",
