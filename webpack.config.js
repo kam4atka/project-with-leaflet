@@ -10,5 +10,21 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, ''),
     watchContentBase: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'css',
+              name: '[name].[ext]'
+            }
+          },
+        ]
+      }
+    ]
   }
 };
