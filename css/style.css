@@ -61,7 +61,7 @@ fieldset {
 
 .promo {
   position: absolute;
-  z-index: 1;
+  z-index: 999;
   top: 40px;
   left: 50%;
 
@@ -90,7 +90,6 @@ fieldset {
   height: 750px;
 
   background-color: #82bcc0;
-  background-image: url("../img/map.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
 
@@ -133,6 +132,7 @@ fieldset {
 
 .map--faded .map__overlay {
   opacity: 1;
+  z-index: 999;
 }
 
 
@@ -201,6 +201,7 @@ fieldset {
 .map__pin--main {
   width: 65px;
   height: 65px;
+  z-index: 999;
 
   cursor: move;
 }
@@ -308,6 +309,7 @@ fieldset {
 .map__filters-container {
   width: 100%;
   background-color: rgba(3, 28, 45, 0.5);
+  z-index: 999;
 }
 
 .map__filters {
@@ -978,11 +980,6 @@ fieldset {
  */
 
 .map__card {
-  position: absolute;
-  z-index: 2;
-  top: 150px;
-  left: 20px;
-
   padding: 10px 10px 20px;
   width: 230px;
 
@@ -990,6 +987,11 @@ fieldset {
 
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+.popup p {
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .popup__avatar {
